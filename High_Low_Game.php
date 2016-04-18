@@ -2,14 +2,15 @@
 
 // game picks a random number between 1 and 100.
 // prompts user to guess the number
+if ($argc == 3) {
+$min = $argv[1];
+$max = $argv[2];
+}
 do {
-  $randNum = rand(1, 100);
+  $randNum = rand($min, $max);
   $guesses = 0;
   $playerGuess = -1;
 
-  if ($argv == 3) {
-    echo "Input a number between {$argv[min(1)]} and {$argv[max(100)]}\n";
-  }
   while ($playerGuess != $randNum) {
     $guesses ++;
     echo "Input a number between 1 and 100.\n";
